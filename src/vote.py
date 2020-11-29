@@ -1,5 +1,5 @@
-from enum import Enum
+from enum import Enum, auto
 
 class Vote(Enum):
-    ACCEPT = 1
-    REJECT = 2
+    ACCEPT = auto()
+    REJECT = auto()

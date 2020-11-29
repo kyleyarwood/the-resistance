@@ -1,5 +1,5 @@
-from enum import Enum
+from enum import Enum, auto
 
 class MissionDecision(Enum):
-    SUCCESS = 1
-    FAIL = 2
+    SUCCESS = auto()
+    FAIL = auto()
