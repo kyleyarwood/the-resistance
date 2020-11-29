@@ -1,13 +1,11 @@
 from character import Character
-from game import Game
-from controller import Controller
 from mission_decision import MissionDecision
 from vote import Vote
 from typing import List
 
 class Spy(Character):
-    def __init__(self, game: Game, cpu: bool, controller: Controller):
-        super().__init__(game, cpu, controller)
+    def __init__(self, game: 'Game', controller: 'Controller'):
+        super().__init__(game, controller)
 
     def mission_decision(self):
         if self.cpu:
@@ -26,3 +24,6 @@ class Spy(Character):
     def _cpu_choose_team(self, num_members):
         #TODO: figure out how the computer should choose their team
         return list(range(num_members))
+
+    def __str__(self):
+        return "Spy {}".format(self.player_num)
