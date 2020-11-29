@@ -3,6 +3,7 @@ from game import Game
 from controller import Controller
 from mission_decision import MissionDecision
 from vote import Vote
+from typing import List
 
 class Spy(Character):
     def __init__(self, game: Game, cpu: bool, controller: Controller):

@@ -1,5 +1,6 @@
 from controller import Controller
 from game import Game
+from typing import List
 
 class Character(object):
     player_num = 0
@@ -7,12 +8,12 @@ class Character(object):
         self.game = game
         self.cpu = cpu
         self.controller = controller
-        self.player_num = player_num
-        player_num += 1
+        self.player_num = Character.player_num
+        Character.player_num += 1
 
     def vote(self, team: List[int]):
         if self.cpu:
-            return self._cpu_vote()
+            return self._cpu_vote(team)
         player_vote = self.controller.get_vote(team)
         return player_vote
     

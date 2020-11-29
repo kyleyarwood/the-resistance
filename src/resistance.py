@@ -1,6 +1,9 @@
 from character import Character
 from mission_decision import MissionDecision
 from vote import Vote
+from typing import List
+from game import Game
+from controller import Controller
 
 class Resistance(Character):
     def __init__(self, game: Game, cpu: bool, controller: Controller):
