@@ -13,7 +13,9 @@ class Resistance(Character):
         return MissionDecision.SUCCESS
 
     def _cpu_vote(self, team: List[int]):
+        #TODO: figure out a strategy for the computer voting
         return Vote.ACCEPT
 
     def _cpu_choose_team(self, num_members: int):
+        #TODO: figure out how the computer should choose their team
         return list(range(num_members))

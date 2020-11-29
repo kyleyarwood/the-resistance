@@ -16,10 +16,13 @@ class Spy(Character):
         return player_decision
 
     def _cpu_vote(self, team: List[int]):
+        #TODO: figure out a strategy for the computer voting
         return Vote.ACCEPT
 
     def _cpu_mission_decision(self):
+        #TODO: figure out when it is best for the computer spy to choose fail
         return MissionDecision.FAIL
 
     def _cpu_choose_team(self, num_members):
+        #TODO: figure out how the computer should choose their team
         return list(range(num_members))
