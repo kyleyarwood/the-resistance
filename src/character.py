@@ -1,15 +1,11 @@
-from controller import Controller
-from game import Game
 from typing import List
 
 class Character(object):
-    player_num = 0
-    def __init__(self, game: Game, cpu: bool, controller: Controller):
-        self.game = game
-        self.cpu = cpu
-        self.controller = controller
-        self.player_num = Character.player_num
-        Character.player_num += 1
+    def __init__(self, game: 'Game', controller: 'Controller'):
+        self.cpu = False
+        self.player_num = None
+        self._game = game
+        self._controller = controller
 
     def vote(self, team: List[int]):
         if self.cpu:
