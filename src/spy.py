@@ -10,7 +10,7 @@ class Spy(Character):
     def mission_decision(self):
         if self.cpu:
             return self._cpu_mission_decision()
-        player_decision = self.controller.get_decision()
+        player_decision = self._controller.get_decision()
         return player_decision
 
     def _cpu_vote(self, team: List[int]):

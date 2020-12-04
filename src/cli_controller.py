@@ -25,18 +25,21 @@ class CliController(Controller):
             decision = input("Decision was not one of 'S' or 'F', try again.")
         return decision_map[decision]
 
-    def choose_team(self, num_members: int):
+    def get_team(self, num_members: int, total_players: int):
         display_message = ("Please choose {} space-separated players for the mission."
                             .format(num_members))
         team = self._team_from_input(input(display_message))
-        while self.is_not_valid_team(team, num_members):
+        while self._is_not_valid_team(team, num_members, total_players):
             team = self._team_from_input(input("Try again."))
         return team
 
-    def _team_from_input(self, inp):
+    def _team_from_input(self, inp: str):
         return list(map(int, inp.split()))
 
-    def _is_not_valid_team(self, team, num_members):
+    def _is_not_valid_team(self, 
+            team: List[int], 
+            num_members: int, 
+            total_players: int):
         return (len(team) != num_members or 
                 len(set(team)) != len(team) or
-                any(member not in range(num_members) for member in team))
+                any(member not in range(total_players) for member in team))

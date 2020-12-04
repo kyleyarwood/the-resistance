@@ -10,16 +10,16 @@ class Character(object):
     def vote(self, team: List[int]):
         if self.cpu:
             return self._cpu_vote(team)
-        player_vote = self.controller.get_vote(team)
+        player_vote = self._controller.get_vote(team)
         return player_vote
     
     def mission_decision(self):
         pass
 
-    def choose_team(self, num_members: int):
+    def choose_team(self, num_members: int, total_players: int):
         if self.cpu:
             return self._cpu_choose_team(num_members)
-        player_team = self.controller.get_team(num_members)
+        player_team = self._controller.get_team(num_members, total_players)
         return player_team
 
     def _cpu_vote(self, team: List[int]):

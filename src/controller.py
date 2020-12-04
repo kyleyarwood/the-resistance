@@ -1,4 +1,5 @@
 from typing import List
+from view import View
 
 class Controller(object):
     def __init__(self, view: View):
@@ -10,5 +11,5 @@ class Controller(object):
     def get_decision(self):
         pass
 
-    def get_team(self, num_members: int):
+    def get_team(self, num_members: int, total_players: int):
         pass

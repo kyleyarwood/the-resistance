@@ -41,7 +41,9 @@ class Game(object):
                 self.mission_fail()
                 continue
             mission_team = self.players[mission_leader].choose_team(
-                self.num_players_on_mission[self.mission_no()])
+                self.num_players_on_mission[self.mission_no()],
+                self.num_players)
+            controller.view.display(str(mission_team))
             team_votes = self.receive_team_votes(mission_team)
             if self.is_team_rejected(team_votes):
                 self.vote_fail_counter += 1
